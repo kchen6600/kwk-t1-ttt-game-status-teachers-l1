@@ -48,3 +48,16 @@ def draw?(board)
     return true
   end
 end
+
+def over?(board)
+  return (draw?(board) || full?(board) || won?(board))
+end
+
+def winner(board)
+  if won?(board)
+    ind = won?(board)[0]
+    return board[ind]
+  else
+    return nil
+  end
+end
